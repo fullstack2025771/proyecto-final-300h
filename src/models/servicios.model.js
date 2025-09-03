@@ -9,7 +9,13 @@ price: {
     type: Number,
     required: true
 },
-
+title: {
+     type:String,
+     required: true
+},
+image: {
+    type:String,
+}
 
 
 

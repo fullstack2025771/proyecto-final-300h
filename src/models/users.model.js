@@ -21,10 +21,20 @@ telephone: {
 password: {
      type:String,
      required: true
+},
+role: {
+    type: String,
+    enum: ["admon","user"],
+    required: true
+},
+date: {
+    type: Date,
+    
+    default: Date.now
 },  
 
 
 
 
-}); export const usuarModel = mongoose.model("usuario", usuarioSchema);
+}); export const usuarioModel = mongoose.model("users", usuarioSchema);
 //export default model("usuario", usuarioSchema);
