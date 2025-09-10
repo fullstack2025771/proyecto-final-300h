@@ -1,8 +1,8 @@
 
-const mongoose = require("mongoose");
-const usuarioSchema =new mongoose.Schema({
+import mongoose from "mongoose";
+const userSchema =new mongoose.Schema({
 
-nombre: {
+name: {
     type:String,
     required: true
 },
@@ -15,7 +15,7 @@ address: {
     required: true
 },
 telephone: {
-    type: Number,
+    type: String,
     required: true
 }, 
 password: {
@@ -24,17 +24,17 @@ password: {
 },
 role: {
     type: String,
-    enum: ["admon","user"],
+    enum: ["admin","user"],
     required: true
 },
-date: {
+
+ date: {
     type: Date,
-    
-    default: Date.now
-},  
+    default:Date.now
+ }
 
 
 
 
-}); export const usuarioModel = mongoose.model("users", usuarioSchema);
+}); export const userModel = mongoose.model("users", userSchema);
 //export default model("usuario", usuarioSchema);

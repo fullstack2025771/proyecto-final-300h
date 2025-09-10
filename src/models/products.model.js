@@ -1,6 +1,6 @@
-const mongoose = require("mongoose");
+import mongoose from "mongoose";
 
-const productoSchema = new mongoose.Schema({
+const productSchema = new mongoose.Schema({
 
 
 
@@ -26,7 +26,5 @@ const productoSchema = new mongoose.Schema({
         required: true
     }
 
-
-
 });
-export const producModel = mongoose.model("produc", productoSchema);
+export const productModel = mongoose.model("products", productSchema);
