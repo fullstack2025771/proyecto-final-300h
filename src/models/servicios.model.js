@@ -14,7 +14,8 @@ title: {
      required: true
 },
 image: {
-    type:String,
+    type:String, 
+    
 }
 
 
