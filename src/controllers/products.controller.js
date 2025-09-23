@@ -13,7 +13,7 @@ export const postProduct = async (request, response) =>{
     // Organiza primero el producto  que se va a crear
      const newProduct = {
         ...request.body,
-        image: `/uploads/${request.file.filename}`
+        Image: `/uploads/${request.file.filename}`
      }
 
     await productModel.create(newProduct);

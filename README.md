@@ -24,7 +24,7 @@ a implementar el Metodo CRUD basico de ahi paso a crear las rutas correspondient
 
 <h4>Tercera entrega parte final del backend</h4>
 
-<p> Se crea el jwt dentro de config  se instalan variables de entorno y modulos configuramos y verificamos el jwt.  Se creo en la carpeta src , Cervice y alli un archivo logins.js. Importamos las rutas y dependencias comenzamos ha hacer la logica de sesion se realiza la validacion de contraseña verificamos permisos atravez de  </p>
+<p> Se crea el jwt dentro de config  se instalan variables de entorno y modulos configuramos y verificamos el jwt.  Se creo en la carpeta src , Cervice y alli un archivo logins.js. Importamos las rutas y dependencias comenzamos ha hacer la logica de sesion se realiza la validacion de contraseña verificamos permisos  </p>
 
 <p>A la vez en src creamos middleware deste intermediario nos permite verificar que el token sea permitido teniendo en cuenta si el roll es administrador o no,  y si es administrador tiene derecho a modificar en la base de datos , logicaante esto de los rolles es por que ya lo hemos definido en mis controladores</p>
 
@@ -32,3 +32,7 @@ a implementar el Metodo CRUD basico de ahi paso a crear las rutas correspondient
 
 <p>Atravez de filefilter hacemos los filtros de que clase de archivos vamos a recibir y si es permitido entonces definimos  los limites atravez de fileSize
 y siempre estamos pendientes de revisar que  en la terminal salga conexion exitosa en el puerto 3000 si no sale verificar las funciones flecha y funciones planteadas siempre teniendo en cuenta ecma6 </p>
+
+<p>Despues de revisar el codigo de que  el puerto 3000 este trabajando correctamente hacemos pruebas, cambiando usuario, contraseña, gmail,  cambiando el roll de admin y si todo nos sale bien podemos crear producto o servicio por que al salir  token exitoso el administrador puede generar estos cambios </p>
+
+<p> Realizado por Esperanza carvajal</p>
