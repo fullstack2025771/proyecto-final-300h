@@ -21,3 +21,14 @@ Se creara conjuntamente el archivo Gitignore donde se dejara Node-modules y .env
 <p>Se creo los archivos productsControllerjs y userController.js como tambien sus respectivas rutas despues se procede
 a implementar el Metodo CRUD basico de ahi paso a crear las rutas correspondientes a productos y a usuarios asegurandome que se conecten con los controladores para esto realizo las respectivas exportaciones. </p>
 <p>Se manejan algunos codigos HTTP y estos de una manera asincronica  implementa  el trycath importamos dependencias y modulos necesarios y utilizamos las acciones que van a realizar el CRUD. creamos los id, hacemos pruebas con postman y mongodb</p>
+
+<h4>Tercera entrega parte final del backend</h4>
+
+<p> Se crea el jwt dentro de config  se instalan variables de entorno y modulos configuramos y verificamos el jwt.  Se creo en la carpeta src , Cervice y alli un archivo logins.js. Importamos las rutas y dependencias comenzamos ha hacer la logica de sesion se realiza la validacion de contraseña verificamos permisos atravez de  </p>
+
+<p>A la vez en src creamos middleware deste intermediario nos permite verificar que el token sea permitido teniendo en cuenta si el roll es administrador o no,  y si es administrador tiene derecho a modificar en la base de datos , logicaante esto de los rolles es por que ya lo hemos definido en mis controladores</p>
+
+<p>En la carpeta config  creamos multer.js alli gestioonamos archivos, hacemos autenticacion y permisos con _filename conocemos cual es el archivo en donde estoy y con _dirname se especifica la direccion de la carpeta y  nombramos uploads donde se va a subir o descargar la informacion. Atravez de varios comandos propios de node y mkdirSync se crea carpeta y con diskstorage se almacena la informacion de archivos y si todo sale bien con cb null guarde en UPLOADS_folder</p>
+
+<p>Atravez de filefilter hacemos los filtros de que clase de archivos vamos a recibir y si es permitido entonces definimos  los limites atravez de fileSize
+y siempre estamos pendientes de revisar que  en la terminal salga conexion exitosa en el puerto 3000 si no sale verificar las funciones flecha y funciones planteadas siempre teniendo en cuenta ecma6 </p>

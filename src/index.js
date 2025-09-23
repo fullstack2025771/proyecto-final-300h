@@ -3,7 +3,10 @@ import "dotenv/config";
 import servidor from "./servidor.js";
 import { conexiondb } from "./config/db.js";
 
-conexiondb()
+
+
+
+conexiondb();
 
 
 

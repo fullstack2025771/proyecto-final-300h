@@ -1,4 +1,5 @@
-const mongoose = require("mongoose");
+import mongoose from "mongoose";
+
 const serviciosSchema = new mongoose.Schema({
 
 description: {
@@ -15,7 +16,7 @@ title: {
 },
 image: {
     type:String, 
-    
+    required: true
 }
 
 

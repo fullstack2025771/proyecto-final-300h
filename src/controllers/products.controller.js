@@ -1,11 +1,22 @@
 
 import { productModel} from "../models/products.model.js";
 
-
-
 export const postProduct = async (request, response) =>{
+   
  try {
-    await productModel.create(request.body);
+    // Validacion de que si existe un archivo enviado por el cliente
+    if (!request.file){
+        return response.status(400).json({
+            "mensaje": "Debe subir un archivo de imagen"
+        });
+    }
+    // Organiza primero el producto  que se va a crear
+     const newProduct = {
+        ...request.body,
+        image: `/uploads/${request.file.filename}`
+     }
+
+    await productModel.create(newProduct);
     return response.status(201).json({
         "mensaje": "Producto creado correctamente"
     });
@@ -16,6 +27,14 @@ export const postProduct = async (request, response) =>{
     })
  }
 }
+// const _filename =fileURLToPath(import.meta.url);
+ // const base = Path2D.basename(file.originalname, ext).replace(/\s+/g, "_");
+   // cb(null, `${base}-${Date.now()}${ext}`);
+
+
+
+
+
 
 export const getAllProducts = async ( request,response) =>{
         try {
@@ -26,6 +45,7 @@ export const getAllProducts = async ( request,response) =>{
             })
         } catch (error) {
             return response.status(500).json({
+                "mensaje": "Ocurrio un error al mostrar los productos",
                 "error": error.message || error
             })
         }
