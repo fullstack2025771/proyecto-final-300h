@@ -5,7 +5,7 @@ const diagnosticoSchema = new mongoose.Schema({
   
   title: {
       type:String,
-      required: true
+      required: trueig
   },
   description: {
       type:String,
