@@ -4,7 +4,7 @@ const productSchema = new mongoose.Schema({
 
 
 
-    Image: {
+    image: {
         type: String,
         required: true
     },

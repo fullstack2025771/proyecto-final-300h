@@ -4,23 +4,16 @@ import { productModel} from "../models/products.model.js";
 export const postProduct = async (request, response) =>{
    
  try {
-    // Validacion de que si existe un archivo enviado por el cliente
-    if (!request.file){
-        return response.status(400).json({
-            "mensaje": "Debe subir un archivo de imagen"
-        });
-    }
-    // Organiza primero el producto  que se va a crear
-     const newProduct = {
-        ...request.body,
-        Image: `/uploads/${request.file.filename}`
-     }
-
-    await productModel.create(newProduct);
+   
+console.log(request.body)
+    await productModel.create(request.body);
+    
     return response.status(201).json({
         "mensaje": "Producto creado correctamente"
     });
+
  } catch (error) {
+    console.log(error)
     return response.status(400).json({
         "mensaje": "Ocurrio un error al crear el producto",
         "error": error.message ||error 
@@ -31,10 +24,23 @@ export const postProduct = async (request, response) =>{
  // const base = Path2D.basename(file.originalname, ext).replace(/\s+/g, "_");
    // cb(null, `${base}-${Date.now()}${ext}`);
 
-
-
-
-
+export const getProductsById = async (request, response) =>{
+     try {
+        const id = request.params.id
+        const product = await productModel.findById(id)
+        return response.status(200).json({
+                "mensaje": "Se encontro el producto",
+                "data": product
+            })
+     } catch (error) {
+        console.log(error)
+        return response.status(500).json({
+                "mensaje": "Ocurrio un error al mostrar los productos",
+                "error": error.message || error
+            })
+     }
+}
+    
 
 export const getAllProducts = async ( request,response) =>{
         try {
@@ -77,6 +83,7 @@ export const deleteProductById = async (request, response)=>{
     });
 
    } catch (error) {
+    console.log(error)
     return response.status(500).json({
     "mensaje": "Ocurrio un error al eliminar el producto",
         "error": error.message || error

@@ -43,6 +43,22 @@ export const getUsers = async ( request,response) =>{
       }
 
 }
+export const getUserById = async (request, response) =>{
+     try {
+        const id = request.params.id
+        const users = await userModel.findById(id)
+        return response.status(200).json({
+                "mensaje": "Se encontro el producto",
+                "data": users
+            })
+     } catch (error) {
+        console.log(error)
+        return response.status(500).json({
+                "mensaje": "Ocurrio un error al Actualizar el Usuario",
+                "error": error.message || error
+            })
+     }
+}
 export const putUserById = async (request, response)=>{
     try {
         const idForUpdate = request.params.id;

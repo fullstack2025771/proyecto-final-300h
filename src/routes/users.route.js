@@ -1,5 +1,5 @@
 import express from "express"
-import {postUser, getUsers, putUserById, deleteUserById, deleteUserByemail } from "../controllers/users.controller.js";
+import {postUser, getUsers, putUserById, deleteUserById, deleteUserByemail, getUserById } from "../controllers/users.controller.js";
 import { auth} from "../middleware/auth.js";
 export const userRouter = express.Router();
 
@@ -7,7 +7,7 @@ userRouter.post("/crear", postUser);
 
 
 userRouter.get("/mostrar", auth("admin"), getUsers);
-
+userRouter.get("/mostrarUsuario/:id" ,getUserById); 
 
 userRouter.put("/actualizar/:id",putUserById);
 
