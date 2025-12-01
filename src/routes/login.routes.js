@@ -3,7 +3,7 @@ import {login} from "../service/login.js";
 
 
 export const loginRouter = express.Router() ;
-loginRouter.post("/login", login);
+loginRouter.post("/", login);
 // loginRouter.post("/",login);
 
 
