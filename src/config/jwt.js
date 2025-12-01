@@ -6,6 +6,7 @@ export const generateToken = (payload)=>{
  return new Promise((resolve, reject)=>{
      jsonwebtoken.sign(payload, key, {expiresIn:"1h"}, (error, token)=>{
         if(error){
+            console.log(error)
             reject(new Error("Hubo un error al generar el jwt", error.message))
         }else {
             resolve(token);
