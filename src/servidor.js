@@ -28,11 +28,11 @@ servidor.use("/login", loginRouter)
 servidor.use(citaRouter)
 
 const frontendPath = path.join(_dirname, "..", "dist","Frontend","browser");
- servidor.use(express.static(frontendPath));
+servidor.use(express.static(path.join(_dirname, "dist", "frontend", "browser")));
 
- servidor.get( "*",(req, res) => {
-   res.sendFile(path.join(frontendPath, "index.html"));
- });
+servidor.get(/.*/, (req, res) => {
+  res.sendFile(path.join(_dirname, "dist", "frontend", "browser", "index.html"));
+});
 
 //  });
 export default servidor;
