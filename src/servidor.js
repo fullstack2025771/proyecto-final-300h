@@ -10,17 +10,13 @@ import cors from "cors";
 import path from "path";
 import { fileURLToPath } from "url";
 
-
 const _filename = fileURLToPath(import.meta.url);//_filename= backend/src/config/multer.js cual esla ruta
 const _dirname =path.dirname(_filename);//_dirname=
 
 const servidor = express();
 servidor.use(morgan("dev"));
 servidor.use(express.json());
-servidor.get('/', (request, response)=>{
-    res.status(404).send("no encontrado");
 
-});
 servidor.use(cors());
 servidor.use (express.json()); //para usar formato json,enviar y recibir json en nuestro servidor
 servidor.use ("/products", productRouter);
@@ -31,9 +27,12 @@ servidor.use("/uploads", express.static(path.join(_dirname, "src/uploads")))
 servidor.use("/login", loginRouter)
 servidor.use(citaRouter)
 
-servidor.use(express.static(path.join(_dirname, "dist", "frontend", "browser")));
- 
-servidor.get(/.*/, (req, res) => {
-  res.sendFile(path.join(_dirname, "dist", "frontend", "browser", "index.html"));
-});
+const frontendPath = path.join(_dirname, "..", "dist","Frontend","browser");
+ servidor.use(express.static(frontendPath));
+
+ servidor.get( "*",(req, res) => {
+   res.sendFile(path.join(frontendPath, "index.html"));
+ });
+
+//  });
 export default servidor;
