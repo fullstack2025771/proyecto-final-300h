@@ -5,8 +5,8 @@
   "main": "src/index.js",
   "type": "module",
   "scripts": {
-    "start": "node src/index.js/app.js",
-    "dev": "nodemon src/index.js/app.js"
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js"
   },
   "author": "Esperanza carvajal",
   "license": "ISC",
