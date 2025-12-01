@@ -24,7 +24,7 @@ servidor.use ("/users", userRouter);
 servidor.use ("/servicios", servicioRouter);
 servidor.use("/uploads", express.static(path.join(_dirname, "src/uploads")))
 
-servidor.use("/login", loginRouter)
+servidor.use("/Login", loginRouter)
 servidor.use(citaRouter)
 
 const frontendPath = path.join(_dirname, "..", "dist","Frontend","browser");
